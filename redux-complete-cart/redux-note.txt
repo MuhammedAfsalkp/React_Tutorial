@@ -1,0 +1,29 @@
+it is very useful
+since the all datas are stored in single store,and
+handle different reducers set functions for each logic
+here 1-ui-slice
+2-cart
+
+then we integrate them to configure to single store.
+
+but in reduxer function we could only do the synchrounous job
+side effects,async code(sending request) code cannot be included in the normal reducer functions
+
+for that we can either use that logic in component as useEffect then dispatch here
+
+for better redux utilization we can create creator function manually like auto redux code
+
+here it return a function it can access the dispatch
+so after the task or throgh the task we can dispatch() to take necessary ui actions
+,or dataChane in the store by calling the reducer function
+
+
+
+*****   NOTE   ******
+once we change the data stored in the redux store(thruogh the reducer function of any slice which is configured for the store)
+(in case of creator function here also we are using the dispatch available to call the any reduce function configured throgh slices)
+all the components which are using the data of the store (throgh the useSelector from react-redux)
+will be rerendrered for the updation to get applied
+(inside component useDispatch return dispatch ,which method is used for the updation to call the reducer function 
+which can either include data as payload,on the called function it contain old state,action contain the payload as action.payload,
+--if we have multiple payload use object wherever it need)

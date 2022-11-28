@@ -1,0 +1,11 @@
+td {
+    text-align: center;
+}
+
+ tr{
+    border-bottom: 1px solid rgb(230, 224, 224);
+}
+
+tr:last-child {
+    border-bottom: none;
+}
